@@ -17,8 +17,13 @@ const PostMoviePopular = ({ moviePopularData, post }) => {
 	const [checkedLike, setCheckedLike] = useState(false);
 
 	const handleLike = (e) => {
-		setCheckedLike(true);
-		post.isLiked = true;
+		if (!checkedLike) {
+			setCheckedLike(true);
+			post.isLiked = true;
+		} else {
+			setCheckedLike(false);
+			post.isLiked = false;
+		}
 		dispatch(handleLikeAction(moviePopularData));
 	};
 

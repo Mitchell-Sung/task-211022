@@ -16,12 +16,6 @@ const moviePopularReducer = (state = initialState, action) => {
 				isLoading: false,
 				moviePopularResults: action.payload,
 			};
-		// case types.MOVIE_LIKED:
-		// 	return {
-		// 		...state,
-		// 		isLoading: false,
-		// 		moviePopularResults: action.payload,
-		// 	};
 		case types.MOVIE_POPULAR_ERROR:
 			return { ...state, isLoading: false, error: action.payload };
 		default:
